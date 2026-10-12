@@ -9,7 +9,9 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 ## Features
 
 - Responsive company navigation and website search.
-- Manual hero image selector; reduced-motion support.
+- Slow hero image slideshow with pause/manual selection, visibility-aware playback and reduced-motion support.
+- Service capability summaries and swipeable mobile cards with keyboard-accessible controls.
+- Floating enquiry panel with service-specific WhatsApp and quote links, plus tap-to-call contact.
 - Twenty project records, category and text filters, individual project pages.
 - Document centre, QMS download and printable capability overview.
 - Keyboard-accessible photo viewer and office location tabs.
@@ -17,6 +19,8 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 - ERP system login remains at `https://matong-erp-favour12.vercel.app/login`; authentication and permissions are handled by the existing ERP.
 
 ## Validation
+
+`node web/experience.test.cjs` checks slideshow playback, load failures, carousel controls and contact-panel routing.
 
 `npm run check` checks generated pages, local routes/assets, fragment links, duplicate IDs, project coverage and the exclusion of PHP source from the deployment.
 

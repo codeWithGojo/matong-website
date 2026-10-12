@@ -1,8 +1,6 @@
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const menu=$('.mobile-menu');menu.addEventListener('click',()=>{const open=document.body.classList.toggle('nav-open');menu.setAttribute('aria-expanded',open);menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.classList.remove('nav-open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation')}});
-const heroSlides=[{image:'/images/slide03.jpg',alt:'Industrial energy facility'},{image:'/images/slide01.jpg',alt:'Offshore drilling platform'},{image:'/images/gallery/full/09.jpg',alt:'Technician carrying out maintenance'}];
-$$('[data-slide]').forEach(button=>button.addEventListener('click',()=>{const slide=heroSlides[Number(button.dataset.slide)];const img=$('#hero-image');img.src=slide.image;img.alt=slide.alt;$$('[data-slide]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',b===button)})}));
 $$('.to-top').forEach(b=>b.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})));
 $$('.print-button').forEach(b=>b.addEventListener('click',()=>window.print()));
 $$('dialog').forEach(dialog=>{dialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));$('.dialog-close',dialog).addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}})});
