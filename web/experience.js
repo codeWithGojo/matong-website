@@ -138,6 +138,10 @@
     const whatsapp = dialog.querySelector('[data-enquiry-whatsapp]');
     const quote = dialog.querySelector('[data-enquiry-quote]');
     launcher.hidden = false;
+    const quoteForm = document.querySelector('#quote-form');
+    if (quoteForm && 'IntersectionObserver' in window) {
+      new IntersectionObserver(entries => { launcher.hidden = entries[0].isIntersecting; }).observe(quoteForm);
+    }
     launcher.addEventListener('click', () => {
       document.body.classList.remove('nav-open');
       dialog.showModal(); document.body.classList.add('modal-open');
