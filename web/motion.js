@@ -195,7 +195,7 @@
     }
   });
   // Opt-in, local-only diagnostics for the motion audit; no production RAF loop.
-  if (window.location?.search.includes('motion-audit=1') && 'PerformanceObserver' in window) {
+  if ((window.location?.search.includes('motion-audit=1') || root.getAttribute('data-motion-audit-enabled') === 'true') && 'PerformanceObserver' in window) {
     const gaps = [], longTasks = [];
     let cls = 0, first, previous;
     const longObserver = new PerformanceObserver(list => {
@@ -217,6 +217,7 @@
           viewport: `${innerWidth}x${innerHeight}`,
           reducedMotion: reduce.matches,
           narrowViewport: narrow.matches,
+          horizontalOverflow: document.documentElement.scrollWidth > innerWidth,
           frames: gaps.length,
           frameIntervalP95: Number((gaps[Math.floor(gaps.length * .95)] || 0).toFixed(2)),
           longTasks, layoutShift: Number(cls.toFixed(4))

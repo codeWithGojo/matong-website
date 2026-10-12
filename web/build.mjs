@@ -60,3 +60,9 @@ page('/404','Page not found','The requested page could not be found.',`<section 
 fs.writeFileSync(`${out}/assets/search.json`,JSON.stringify(index));fs.writeFileSync(`${out}/robots.txt`,'User-agent: *\nAllow: /\nSitemap: https://matong-website-favour12.vercel.app/sitemap.xml\n');
 fs.writeFileSync(`${out}/sitemap.xml`, '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+index.filter(p=>p.url!=='/404').map(p=>'<url><loc>https://matong-website-favour12.vercel.app'+p.url+'</loc></url>').join('')+'</urlset>');
 console.log(`Built ${index.length} pages and 20 project detail pages. Original PHP sources retained; deployment contains static output only.`);
+
+// Temporary, unlinked preview harness for narrow-viewport motion QA.
+const mobileHome=fs.readFileSync(`${out}/index.html`,'utf8').replace('<html lang="en">','<html lang="en" data-motion-audit-enabled="true">');
+const mobileProjects=fs.readFileSync(`${out}/projects.html`,'utf8').replace('<html lang="en">','<html lang="en" data-motion-audit-enabled="true">');
+fs.writeFileSync(`${out}/motion-audit.html`,`<!doctype html><html lang="en"><head><meta name="robots" content="noindex"><title>Motion viewport audit</title><link rel="stylesheet" href="/assets/motion-audit.css"></head><body><h1>Mobile viewport audit</h1><div class="audit-frames"><section><h2>Home — 360px</h2><iframe id="mobile-home" title="Home at 360 pixels" width="360" height="780" srcdoc="${esc(mobileHome)}"></iframe></section><section><h2>Projects — 390px</h2><iframe id="mobile-projects" title="Projects at 390 pixels" width="390" height="780" srcdoc="${esc(mobileProjects)}"></iframe></section></div></body></html>`);
+fs.writeFileSync(`${out}/assets/motion-audit.css`,'body{font:14px Arial;margin:20px;background:#f2f5f7;color:#09445a}.audit-frames{display:flex;gap:35px}h1{font-size:24px}h2{font-size:16px}iframe{border:1px solid #dce5e8;background:white}');
