@@ -1,6 +1,6 @@
 /* Motion enhances the existing design. All animated properties are transform/opacity. */
 :root { --motion-ease: cubic-bezier(.22, 1, .36, 1); --motion-duration: .65s; }
-.motion-intro { position:fixed; inset:0; z-index:80; display:grid; place-items:center; background:#fff; pointer-events:none; opacity:0; }
+.motion-intro { position:fixed; inset:0; z-index:80; display:grid; place-items:center; background:var(--navy); pointer-events:none; opacity:0; }
 .motion-intro img { width:82px; height:82px; object-fit:contain; opacity:0; }
 .intro-running .motion-intro { opacity:1; }
 .intro-running .motion-intro img { animation:intro-logo .48s var(--motion-ease) .06s both; }
@@ -28,7 +28,7 @@
 .gallery-item { overflow:clip; }
 /* A fixed shadow/background layer fades, without interpolating a shadow or colour. */
 .header { isolation:isolate; }
-.header::after { content:''; position:absolute; inset:0; z-index:-1; background:#fff; box-shadow:0 5px 20px #042b3d14; opacity:0; pointer-events:none; transition:opacity .45s ease-out; }
+.header::after { content:''; position:absolute; inset:0; z-index:-1; background:var(--navy); box-shadow:0 5px 20px #021c2980; opacity:0; pointer-events:none; transition:opacity .45s ease-out; }
 .header.is-scrolled::after { opacity:1; }
 .nav-group[open] .mega { animation:menu-arrive .35s var(--motion-ease) both; }
 .nav-open .header nav { animation:menu-arrive .4s var(--motion-ease) both; }
@@ -42,10 +42,10 @@
 .motion-shape-host { position:relative; isolation:isolate; }
 .floating-shapes { position:absolute; inset:0; overflow:clip; pointer-events:none; z-index:-1; }
 .floating-shape { position:absolute; display:block; pointer-events:none; opacity:.065; transform:translate3d(0,0,0); }
-.floating-shape.shape-circle { width:190px; height:190px; border:1px solid #09445a; border-radius:50%; right:-45px; top:20%; }
+.floating-shape.shape-circle { width:190px; height:190px; border:1px solid #c1d6df; border-radius:50%; right:-45px; top:20%; }
 .floating-shape.shape-arc { width:230px; height:230px; border:1px solid #dd4454; border-bottom-color:transparent; border-left-color:transparent; border-radius:50%; left:-90px; top:30%; }
 .floating-shape.shape-small { width:75px; height:75px; border:1px solid #dd4454; border-radius:50%; right:8%; top:12%; }
-.floating-shape.shape-wide { width:300px; height:300px; border:1px solid #09445a; border-radius:50%; left:-120px; bottom:8%; }
+.floating-shape.shape-wide { width:300px; height:300px; border:1px solid #c1d6df; border-radius:50%; left:-120px; bottom:8%; }
 .high-legibility .floating-shapes { display:none; }
 .legibility-toggle { font:inherit; color:inherit; min-height:44px; display:inline-flex; align-items:center; gap:7px; padding:0; }
 .legibility-toggle::before { content:''; width:12px; height:12px; border:1px solid currentColor; border-radius:50%; }

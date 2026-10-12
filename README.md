@@ -1,6 +1,6 @@
 # Matong Energy website
 
-A responsive company website with Matong's original navy/coral colours, its supplied project portfolio, and a link to the existing ERP staff login. The original PHP pages remain in the repository for reference and existing PHP hosting.
+A responsive company website with Matong's original navy/coral colours, its supplied project portfolio, and a clearly labelled ERP link, separate from the Staff portal. The original PHP pages remain in the repository for reference and existing PHP hosting.
 
 ## Vercel build
 
@@ -14,7 +14,7 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 - Document centre, QMS download and printable capability overview.
 - Keyboard-accessible photo viewer and office location tabs.
 - Quote brief builder: downloads a text brief or prepares an email to `info@matongenergy.com`. Visitors send the message in their own email app. No automatic submission or enquiry database is claimed.
-- ERP Staff Login remains at `https://matong-erp-favour12.vercel.app/login`; authentication and permissions are handled by the existing ERP.
+- ERP system login remains at `https://matong-erp-favour12.vercel.app/login`; authentication and permissions are handled by the existing ERP.
 
 ## Validation
 
@@ -23,3 +23,7 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 ## Content and integration boundary
 
 Project names, clients, facilities, office details, leadership and policy text are taken from the supplied company files. The client should review current accuracy before replacing the official website. No ERP database, authentication rules, company domain or live PHP hosting is changed by this website build. Shared login, CMS publishing, vendor onboarding and enquiry tracking require separate backend configuration.
+
+## Separate Staff portal
+
+The website labels the ERP independently from the Staff portal and staff webmail. Set `MATONG_STAFF_PORTAL_URL` at build time once the separate HTTPS portal destination is confirmed. Until then, the portal FAQ directs staff to company administration; no ERP address is labelled as the Staff portal.
