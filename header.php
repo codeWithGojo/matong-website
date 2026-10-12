@@ -7,7 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="format-detection" content="telephone=no">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="icon" href="/images/favicon.ico?v=2" sizes="16x16 32x32 48x48 64x64">
+	<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png?v=2">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animations.css">
