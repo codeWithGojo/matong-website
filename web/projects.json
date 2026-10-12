@@ -1,0 +1,191 @@
+[
+  {
+    "title": "Well head installation & maintenance",
+    "image": "images/gallery/full/01.jpg",
+    "categories": [
+      "engineering"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Installation of Vessel pump",
+    "image": "images/gallery/full/02.jpg",
+    "categories": [
+      "engineering"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Pressure vessel-Automated Ultrasonic testing",
+    "image": "images/gallery/full/03.jpg",
+    "categories": [
+      "offshore"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Non-intrusive inspection of crude oil separator-using AUT technique",
+    "image": "images/gallery/full/04.jpg",
+    "categories": [
+      "offshore",
+      "engineering"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Non-intrusive inspection of nitrogen storage drum-using AUT technique",
+    "image": "images/gallery/full/05.jpg",
+    "categories": [
+      "offshore",
+      "engineering"
+    ],
+    "client": "BW Offshore Nigeria Limited",
+    "facility": "Sendje Berge and ABO FPSOs"
+  },
+  {
+    "title": "Topside Inspection and maintenance",
+    "image": "images/gallery/full/06.jpg",
+    "categories": [
+      "offshore",
+      "engineering"
+    ],
+    "client": "BW Offshore Nigeria Limited",
+    "facility": "ABO FPSO"
+  },
+  {
+    "title": "Well head maintenance",
+    "image": "images/gallery/full/07.jpg",
+    "categories": [
+      "engineering"
+    ],
+    "client": "BW Offshore Nigeria Limited",
+    "facility": "ABO FPSO"
+  },
+  {
+    "title": "Repair of hall compartment",
+    "image": "images/gallery/full/08.jpg",
+    "categories": [
+      "engineering"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Repair and maintenance of FPSO",
+    "image": "images/gallery/full/09.jpg",
+    "categories": [
+      "engineering"
+    ],
+    "client": "Total Upstream Nigeria Limited",
+    "facility": "Total FPSO EGINA Field (OML130)"
+  },
+  {
+    "title": "Repair and maintenance of work boat",
+    "image": "images/gallery/full/10.jpg",
+    "categories": [
+      "engineering"
+    ],
+    "client": "Total Upstream Nigeria Limited",
+    "facility": "Total FPSO EGINA Field (OML130)"
+  },
+  {
+    "title": "Procure Sub-marine Hoses & Cables",
+    "image": "images/gallery/full/11.jpg",
+    "categories": [
+      "procurement"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Agbami Export-tandem-hawser",
+    "image": "images/gallery/full/12.jpg",
+    "categories": [
+      "procurement"
+    ],
+    "client": "Chevron Nigeria Limited",
+    "facility": "Chevron AGBAMI FPSO"
+  },
+  {
+    "title": "Procure SINGLES KID TRIPLES PUMP (500PSI WITH MANIFOLD)",
+    "image": "images/gallery/full/13.jpg",
+    "categories": [
+      "procurement"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Procure 2.5 Flow line",
+    "image": "images/gallery/full/14.jpg",
+    "categories": [
+      "offshore",
+      "procurement"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Procurement of 10 string, Single Carcass Mainline Fully Floating Hose and accessories",
+    "image": "images/gallery/full/15.jpg",
+    "categories": [
+      "offshore",
+      "procurement"
+    ],
+    "client": "BW Offshore Nigeria Limited",
+    "facility": "ABO FPSO"
+  },
+  {
+    "title": "Procure 100 meters Subsea flexible hose",
+    "image": "images/gallery/full/16.jpg",
+    "categories": [
+      "offshore",
+      "procurement"
+    ],
+    "client": "Addax Petroleum Nigeria Limited",
+    "facility": "ABO FPSO"
+  },
+  {
+    "title": "Procure safety relief valve",
+    "image": "images/gallery/full/17.jpg",
+    "categories": [
+      "offshore",
+      "procurement"
+    ],
+    "client": "Brittania-u Nigeria Limited",
+    "facility": "Brittania-U FPSO Ajapa Marginal Field (OML90)"
+  },
+  {
+    "title": "Procure 10 string of Single Carcass Mainline Fully Floating Hose and accessories",
+    "image": "images/gallery/full/18.jpg",
+    "categories": [
+      "offshore",
+      "procurement"
+    ],
+    "client": "BW Offshore Nigeria Limited",
+    "facility": "Sendje Berge and ABO FPSOs"
+  },
+  {
+    "title": "Procurement of 8 string, Single Carcass Mainline Fully Floating Hose and accessories",
+    "image": "images/gallery/full/19.jpg",
+    "categories": [
+      "procurement"
+    ],
+    "client": "BW Offshore Nigeria Limited",
+    "facility": "ABO FPSO"
+  },
+  {
+    "title": "CTR055329-Supply of Crude Oil Offloading Hoses and accessories",
+    "image": "images/gallery/full/20.jpg",
+    "categories": [
+      "offshore",
+      "procurement"
+    ],
+    "client": "Total Energies Nigeria Limited",
+    "facility": "AKPO FPSO"
+  }
+]

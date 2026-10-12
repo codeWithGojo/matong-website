@@ -1,0 +1,1 @@
+{"name":"matong-website","version":"2.0.0","private":true,"type":"module","scripts":{"build":"node web/build.mjs","check":"node web/check.mjs"},"engines":{"node":">=20"}}
