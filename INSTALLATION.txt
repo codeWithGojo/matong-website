@@ -1,0 +1,9 @@
+MATONG WEBSITE — ERP LOGIN LINK
+
+Upload the contents of this folder to your PHP website document root after backing up the live website. Keep .htaccess when uploading.
+
+Staff Login in the shared header opens https://matong-erp-favour12.vercel.app/login. ERP login and role permissions remain managed by the ERP. This is a navigation connection; no shared login or data synchronisation has been added. No hosting or DNS changes have been made.
+
+Package uses top-level PHP pages plus assets and .htaccess from Matong_New_Website given doc.zip. Old archives and the unrelated school-management folder are excluded.
+
+The existing contact form recipient is unchanged; confirm the intended company email before deployment.
