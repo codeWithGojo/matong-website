@@ -158,9 +158,9 @@
     job.frame = requestAnimationFrame(step);
   }
 
-  const cards = document.querySelectorAll('.service-card,.project-card,.resource-card,.gallery-item,.team-grid article');
+  const cards = document.querySelectorAll('.service-card,.project-card,.resource-card,.gallery-item,.team-grid article,.pump-gallery figure');
   cards.forEach(card => card.classList.add('motion-card'));
-  for (const grid of document.querySelectorAll('.service-grid,.project-grid,.resource-grid,.gallery-grid,.team-grid')) {
+  for (const grid of document.querySelectorAll('.service-grid,.project-grid,.resource-grid,.gallery-grid,.team-grid,.pump-gallery')) {
     [...grid.children].forEach((card, index) => {
       // Stagger per row rather than delaying the twentieth project by two seconds.
       const columns = Math.max(1, getComputedStyle(grid).gridTemplateColumns.split(' ').length);

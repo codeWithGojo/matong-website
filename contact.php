@@ -38,7 +38,7 @@
     								<div class="mb--40"></div>
 									<h5 class="">Phone Numbers</h5>
     								<div class="mb--40"></div>
-									<h6 class="">+234-906-011-1854, +234-803-866-8510, <br>+234-703-532-5636, +234-803-744-5836</h6>
+									<h6 class=""><a href="tel:+2348037445836">+2348037445836</a><br><a href="tel:+2347035325636">+2347035325636</a><br><a href="tel:+2348124554200">+2348124554200</a><br><a href="https://wa.me/2348037445836">WhatsApp</a></h6>
 								</div>
 							</div>
 						</div>
@@ -69,7 +69,7 @@
 							<div class="media text-center text-sm-left">
 								<div class="media-body">
 									<h6 class="">Delta State (Nigeria)</h6>
-									<p class="excerpt">Km 5, Refinery Road, Warri, <br>Delta State, Nigeria. <br>Zip Code: 320001 <br>Phone: +234-812-455-4200 <br>saidu.i@matongenergy.com</p>
+									<p class="excerpt">Km 5, Refinery Road, Warri, <br>Delta State, Nigeria. <br>Zip Code: 320001 <br>Phone: <a href="tel:+2348124554200">+2348124554200</a> <br>saidu.i@matongenergy.com</p>
 								</div>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 								<div class="media-body">
 									<h6 class="">Rivers State (Nigeria)</h6>
 									<p class="excerpt">Trinity Estate, Aghalonu St, off Ada George Rd, <br>Port Harcourt, Rivers State, Nigeria. 
-									<br>Zip Code: 500001 <br>Phone: +234-703-532-5636 <br>moseswosu@matongenergy.com</p>
+									<br>Zip Code: 500001 <br>Phone: <a href="tel:+2347035325636">+2347035325636</a> <br>moseswosu@matongenergy.com</p>
 								</div>
 							</div>
 						</div>
@@ -89,7 +89,7 @@
 							<div class="media text-center text-sm-left">
 								<div class="media-body">
 									<h6 class="">Florida (USA)</h6>
-									<p class="excerpt">4285 Express Lane, <br>Sarasota, Florida. <br>Zip Code: 3429 <br>Phone: +1(941)538-6941</p>
+									<p class="excerpt">4285 Express Lane, <br>Sarasota, Florida. <br>Zip Code: 3429 <br>Phone: <a href="tel:+2348037445836">+2348037445836</a> </p>
 								</div>
 							</div>
 						</div>
@@ -97,7 +97,7 @@
 							<div class="media text-center text-sm-left">
 								<div class="media-body">
 									<h6 class="">Middx (UK)</h6>
-									<p class="excerpt">Unit 9, Skyport Drive, <br>West Drayton, Middx. <br>Zip Code: UB7 OLB <br>Phone: +44-0175-321-0551</p>
+									<p class="excerpt">Unit 9, Skyport Drive, <br>West Drayton, Middx. <br>Zip Code: UB7 OLB <br>Phone: <a href="tel:+2348037445836">+2348037445836</a> </p>
 								</div>
 							</div>
 						</div>
@@ -105,7 +105,7 @@
 							<div class="media text-center text-sm-left">
 								<div class="media-body">
 									<h6 class="">Akwa Ibom (Nigeria)</h6>
-									<p class="excerpt">19A Mkpok Road, Eket, <br>Akwa Ibom State, Nigeria. <br>Zip Code: 520001 <br>Phone: +234-803-744-5836 </p>
+									<p class="excerpt">19A Mkpok Road, Eket, <br>Akwa Ibom State, Nigeria. <br>Zip Code: 520001 <br>Phone: <a href="tel:+2348037445836">+2348037445836</a> </p>
 								</div>
 							</div>
 						</div>

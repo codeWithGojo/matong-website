@@ -51,7 +51,7 @@
 											<img src="images/team/2.jpeg" alt="#">
 										</div>
 										<div class="item-content">
-											<h6>ENGR. JUMBO UMONDAK</h6>
+											<h6>Engr. Jumbo Michael</h6>
 											<p>(CHAIRMAN)</p>
 										</div>
 									</div>
