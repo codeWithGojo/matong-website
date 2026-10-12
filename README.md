@@ -12,6 +12,9 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 - Slow hero image slideshow with pause/manual selection, visibility-aware playback and reduced-motion support.
 - Service capability summaries and swipeable mobile cards with keyboard-accessible controls.
 - Floating enquiry panel with service-specific WhatsApp and quote links, plus tap-to-call contact.
+- Original client-logo artwork restored on the homepage and Clients page, with links to documented project experience.
+- Company experience, portfolio count and listed-location stats, using the existing count-up enhancement.
+- Active WhatsApp, company WhatsApp group and email icons; optional confirmed Facebook, Instagram and X profiles in `web/social-links.json`. Platform homepages are rejected at build time.
 - Twenty project records, category and text filters, individual project pages.
 - Document centre, QMS download and printable capability overview.
 - Keyboard-accessible photo viewer and office location tabs.
