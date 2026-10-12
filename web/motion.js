@@ -167,7 +167,7 @@
       card.style.setProperty('--reveal-delay', `${(index % columns) * 100}ms`);
     });
   }
-  const targets = [...new Set(document.querySelectorAll('main > section, main h1, main h2, main h3, main p, .conversation h2, footer h3, footer p, .motion-card'))]
+  const targets = [...new Set(document.querySelectorAll('main > section, main h1, main h2, main h3, main p, .conversation h2, footer h3, footer p, .motion-card, #project-count, [data-count-up]'))]
     .filter(el => !el.matches('.hero') && !el.closest('.hero,.floating-shapes'));
   function show(element, instant = false) {
     if (element.classList.contains('is-visible')) return;
