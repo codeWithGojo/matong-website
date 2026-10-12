@@ -30,7 +30,7 @@
 										<div class="icon-styled icon-top  bordered round fs-16">
 											<i class="fas fa-phone"></i>
 										</div>
-										<p>+234 906 011 1854, +234 803 866 8510,<br>+234 703 532 5636, +234 803 744 5836</p>
+										<p><a href="tel:+2348037445836">+2348037445836</a><br><a href="tel:+2347035325636">+2347035325636</a><br><a href="tel:+2348124554200">+2348124554200</a></p>
 									</li>
 									<li class="icon-inline">
 										<div class="icon-styled icon-top bordered round  fs-16">
