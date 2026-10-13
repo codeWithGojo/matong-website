@@ -55,3 +55,5 @@ Vercel previews (or `MATONG_PREVIEW_AUDIT=1 npm run build` locally) create a pre
 See [frontend-upgrade.md](docs/frontend-upgrade.md) for shared tokens, homepage refinements, changed files and verification.
 
 Handover findings, verification and company acceptance requirements: [13 October audit](docs/handover-audit.md).
+
+Mobile photo correction, reference motion and interface refinement: [13 October design update](docs/design-refinement.md).

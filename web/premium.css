@@ -1,4 +1,9 @@
 /* Refined homepage motion, using the shared system. */
+@font-face{font-family:'Matong Sans';src:url('/assets/fonts/IBMPlexSans-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Matong Sans';src:url('/assets/fonts/IBMPlexSans-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Matong Sans';src:url('/assets/fonts/IBMPlexSans-SemiBold.woff2') format('woff2');font-weight:600 700;font-style:normal;font-display:swap}
+:root{--font-body:'Matong Sans',Arial,sans-serif;--font-heading:'Matong Sans',Arial,sans-serif}
+.hero h1 em{font-style:normal}.hero h1{font-weight:600;letter-spacing:-.03em}
 .word-headline{animation:none!important}.hero-word{display:inline-block}.words-ready .hero-word{animation:word-arrive var(--duration-slow) var(--ease) both;animation-delay:calc(var(--i,0) * 100ms)}
 @keyframes word-arrive{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 #hero-image{transform-origin:center;will-change:transform}.hero-motion #hero-image{animation:none}
@@ -24,3 +29,54 @@
 .gallery-feedback{padding:0 var(--space-6);font-size:var(--font-sm)}.gallery-feedback p:empty{display:none}.gallery-retry{margin-block:var(--space-3)}
 @media(max-width:740px){.field-gallery{grid-template-columns:1fr;gap:var(--space-8)}.field-photo .pump-photo{max-height:640px}.gallery-meta .icon-btn{flex-shrink:0}}
 @media(prefers-reduced-motion:reduce){.field-photo .pump-photo img{transition:none}.field-photo .pump-photo:hover img,.field-photo .pump-photo:focus-visible img{transform:none}}
+
+/* Let field photography retain its subject and native proportions. */
+.gallery-grid{display:block;columns:3;column-gap:var(--space-6)}
+.gallery-grid>.gallery-item{width:100%;break-inside:avoid;margin:0 0 var(--space-8);padding:0!important}
+.gallery-item:not(.pump-photo)>img{width:100%;height:auto;aspect-ratio:auto;max-height:none;object-fit:contain;border-radius:var(--radius-xs)}
+.gallery-grid .gallery-item>span{padding:var(--space-4) 0;font-size:var(--font-base);align-items:start;line-height:1.5}
+.gallery-grid .gallery-item>span svg{margin-top:var(--space-1)}
+.gallery-grid .gallery-item::before{display:none}.gallery-grid .gallery-item:hover>img{transform:none}
+.gallery-grid .gallery-item>span svg{transition:transform var(--duration-fast) var(--ease)}
+.gallery-grid .gallery-item:hover>span svg,.gallery-grid .gallery-item:focus-visible>span svg{transform:translateX(4px)}
+.gallery-preview .field-photo figcaption{font-size:var(--font-base)}
+.section-heading h2{font-size:clamp(1.8rem,2.6vw,2.8rem);letter-spacing:-.025em}
+.section-heading .eyebrow{font-size:var(--font-xs);letter-spacing:.1em}
+.project-card{padding:0 0 var(--space-6);border-bottom:1px solid var(--line);border-radius:0}
+.project-card>div{padding:var(--space-5) var(--space-3) 0}.project-card h3{font-size:clamp(1.15rem,1.5vw,1.4rem);line-height:1.35}
+.project-card>div>p,.project-client{font-size:var(--font-sm)}
+.parallax-shape{display:none}
+
+/* Colour-panel interaction observed in the supplied Seplat recording. */
+.project-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-6)}
+.project-feature{display:block;position:relative;isolation:isolate;overflow:hidden;min-width:0;border-bottom:1px solid var(--line)}
+.project-feature::before{content:'';position:absolute;inset:0;background:var(--primary-raised);transform:scaleY(0);transform-origin:bottom;transition:transform var(--duration) var(--ease);z-index:-1}
+.feature-default{transition:transform var(--duration) var(--ease),opacity var(--duration) var(--ease)}
+.feature-image{aspect-ratio:3/2;overflow:hidden}.feature-image img{width:100%;height:100%;object-fit:cover;transition:transform var(--duration-slow) var(--ease)}
+.feature-summary{padding:var(--space-5) var(--space-3) var(--space-6)}
+.feature-summary h3,.feature-reveal h3{font-size:clamp(1.3rem,1.6vw,1.6rem);line-height:1.25;letter-spacing:-.015em}
+.feature-summary h3{margin:var(--space-3) 0}.feature-summary>p:last-of-type{color:var(--muted);font-size:var(--font-sm)}
+.feature-link{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-6);font-size:var(--font-sm)}
+.feature-link svg{transition:transform var(--duration) var(--ease)}
+.feature-reveal{position:absolute;inset:0;padding:var(--space-8);display:flex;flex-direction:column;justify-content:center;opacity:0;transform:translateY(20px);transition:transform var(--duration) var(--ease),opacity var(--duration) var(--ease);pointer-events:none;color:var(--on-primary)}
+.feature-reveal .eyebrow{font-size:var(--font-xs);margin-bottom:var(--space-6);color:var(--accent-ink)}
+.feature-reveal h3{margin-bottom:var(--space-5)}.feature-reveal p{font-size:var(--font-sm)}.feature-reveal p+p{margin-top:var(--space-3)}
+.project-feature:focus-visible::before{transform:scaleY(1)}.project-feature:focus-visible .feature-default{opacity:0;transform:translateY(-12px)}.project-feature:focus-visible .feature-reveal{opacity:1;transform:none}
+@media(hover:hover) and (pointer:fine){.project-feature:hover::before{transform:scaleY(1)}.project-feature:hover .feature-default{opacity:0;transform:translateY(-12px)}.project-feature:hover .feature-reveal{opacity:1;transform:none}.project-feature:hover .feature-link svg{transform:translateX(5px)}}
+
+/* Documents read as a short list rather than another set of feature tiles. */
+.home-documents{grid-template-columns:1fr;gap:0}
+.home-documents .resource-card{display:grid;grid-template-columns:160px minmax(0,1fr) minmax(220px,.9fr) 24px;align-items:center;gap:var(--space-8);padding:var(--space-6) var(--space-3);min-height:0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.home-documents .resource-card>span,.home-documents .resource-card h3,.home-documents .resource-card p{margin:0}
+.home-documents .resource-card h3{font-size:clamp(1.2rem,1.6vw,1.5rem);line-height:1.3}.home-documents .resource-card p{font-size:var(--font-sm)}
+
+/* Brand circles move with each hero image, never with a scrolling loop. */
+.hero-orbits{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-orbit{display:block;position:absolute;border-radius:50%;transform-origin:center;will-change:transform;opacity:.5}
+.hero-orbit-wide{width:clamp(600px,75vw,1200px);aspect-ratio:1;right:-24%;top:-35%;border:1px solid var(--tone-ffffff35);background:var(--primary-raised);opacity:.14}
+.hero-orbit-small{width:clamp(260px,30vw,480px);aspect-ratio:1;left:-10%;bottom:-20%;background:var(--primary-raised);opacity:.4}
+.high-legibility .hero-orbits{display:none}
+@media(max-width:1000px){.gallery-grid{columns:2}.home-documents .resource-card{grid-template-columns:130px minmax(0,1fr) 24px;gap:var(--space-5)}.home-documents .resource-card p{grid-column:2;grid-row:2}.home-documents .resource-card>svg{grid-column:3;grid-row:1 / span 2}.feature-reveal{padding:var(--space-6)}}
+@media(max-width:740px){.gallery-grid{columns:1}.gallery-grid>.gallery-item{margin-bottom:var(--space-8)}.project-feature-grid{grid-template-columns:1fr;gap:var(--space-8)}.feature-image{aspect-ratio:4/3}.feature-summary{padding-inline:0}.feature-summary h3{font-size:1.5rem}.feature-summary>p:last-of-type{font-size:var(--font-base)}.hero h1{font-size:clamp(2.25rem,9.6vw,3.8rem)}.hero-orbit-wide{right:-130%;top:-5%}.hero-orbit-small{left:-40%;bottom:-5%}.home-documents .resource-card{grid-template-columns:minmax(0,1fr) 24px;padding:var(--space-6) var(--space-2);gap:var(--space-3) var(--space-4)}.home-documents .resource-card>span,.home-documents .resource-card h3,.home-documents .resource-card p{grid-column:1}.home-documents .resource-card p{grid-row:auto}.home-documents .resource-card>svg{grid-column:2;grid-row:2}.home-documents .resource-card h3{font-size:1.35rem}}
+@media(prefers-reduced-motion:reduce){.project-feature::before,.feature-default,.feature-image img,.feature-reveal,.feature-link svg,.gallery-grid .gallery-item>span svg{transition:none}.hero-orbit{will-change:auto}}
+@media print{.hero-orbits,.feature-reveal{display:none}.gallery-grid{columns:2}}

@@ -40,8 +40,10 @@
     }
     function schedule() {
       clearTimeout(timer);
-      if (paused || reduce.matches || hovered || focused || !visible || document.hidden || busy ||
-          document.body.classList.contains('modal-open') || document.body.classList.contains('nav-open')) return;
+      const running = !(paused || reduce.matches || hovered || focused || !visible || document.hidden || busy ||
+          document.body.classList.contains('modal-open') || document.body.classList.contains('nav-open'));
+      hero.setAttribute('data-motion-active', String(running));
+      if (!running) return;
       timer = setTimeout(() => show((current + 1) % sources.length), 8000);
     }
     function settle() {
@@ -57,6 +59,7 @@
     }
     async function show(index, manual = false) {
       clearTimeout(timer);
+      hero.setAttribute('data-motion-active', 'false');
       if (manual) { paused = true; updatePlayback(); }
       const ticket = ++request;
       settle();
@@ -90,7 +93,7 @@
     hero.addEventListener('focusin', () => { focused = true; schedule(); });
     hero.addEventListener('focusout', event => { if (!hero.contains(event.relatedTarget)) { focused = false; schedule(); } });
     document.addEventListener('visibilitychange', schedule);
-    window.addEventListener('pagehide', () => { clearTimeout(timer); settle(); request++; busy = false; });
+    window.addEventListener('pagehide', () => { hero.setAttribute('data-motion-active','false'); clearTimeout(timer); settle(); request++; busy = false; });
     window.addEventListener('pageshow', schedule);
     reduce.addEventListener('change', () => { settle(); busy = false; updatePlayback(); schedule(); });
     if ('IntersectionObserver' in window) {
