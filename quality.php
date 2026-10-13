@@ -47,7 +47,7 @@
                             </ol>
 						    <p>MATONG ENERGY LTD leadership is dedicated to upholding this Quality Management Policy and supporting its implementation at all levels of the organization. We are dedicated to maintaining the highest quality standards in our asset integrity and maintenance services. This policy is the foundation upon which we build our reputation for excellence, reliability, and professionalism.</p>
 						<div class="divider-30"></div>
-						    <p class="excerpt">ELISHA NKANKPO NKANKPO<br>FOUNDER</p>
+						    <p class="excerpt">ENGINEER JUMBO MICHEAL<br>FOUNDER</p>
 						</div>
 					</div>
 				</div>
