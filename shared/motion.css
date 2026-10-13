@@ -1,0 +1,6 @@
+[data-reveal].reveal-pending{opacity:0;transform:translateY(18px)}
+[data-reveal]{transition:transform var(--duration-slow) var(--ease),opacity var(--duration-slow) var(--ease);transition-delay:calc(var(--i,0) * 70ms)}
+[data-reveal].is-revealed{opacity:1;transform:none}
+[data-count]{font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){[data-reveal].reveal-pending{opacity:1;transform:none}[data-reveal]{transition:none}}
+.high-legibility [data-reveal].reveal-pending{opacity:1;transform:none}.high-legibility [data-reveal]{transition:none}

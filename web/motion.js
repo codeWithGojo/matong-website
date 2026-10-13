@@ -4,9 +4,8 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = matchMedia('(max-width: 740px)');
   const toggle = document.querySelector('.legibility-toggle');
-  let revealObserver, shapeObserver, sizeObserver, frame = 0;
+  let shapeObserver, sizeObserver, frame = 0;
   const shapes = [];
-  const countJobs = new Map();
   const animationTimers = new Set();
   const later = (fn, delay) => {
     const id = setTimeout(() => { animationTimers.delete(id); fn(); }, delay);
@@ -128,81 +127,8 @@
   }
   measureShapes();
 
-  function finishCount(element, job) {
-    cancelAnimationFrame(job.frame);
-    if (element.contains(job.number)) job.number.textContent = job.target;
-    if (job.live) element.setAttribute('aria-live', job.live);
-    countJobs.delete(element);
-  }
-  function countOnce(element) {
-    if (element.dataset.counted || reduce.matches) return;
-    const match = element.textContent.match(/^(\d+)(.*)$/s);
-    if (!match || Number(match[1]) < 2) return;
-    element.dataset.counted = 'true';
-    const number = document.createElement('span'); number.className = 'motion-count-value';
-    number.textContent = match[1];
-    element.replaceChildren(number, document.createTextNode(match[2]));
-    // Fix the number's existing width before counting, avoiding text/layout movement.
-    number.style.width = `${number.getBoundingClientRect().width}px`;
-    const live = element.getAttribute('aria-live');
-    if (live) element.setAttribute('aria-live', 'off');
-    const target = Number(match[1]); let start, lastWrite = 0;
-    const job = { number, target: match[1], live, frame: 0 };
-    countJobs.set(element, job);
-    const step = now => {
-      // Project filters remain authoritative if a visitor changes them mid-animation.
-      if (!element.contains(number)) { finishCount(element, job); return; }
-      start ??= now;
-      const progress = Math.min(1, (now - start) / 600);
-      if (now - lastWrite > 33 || progress === 1) {
-        number.textContent = String(Math.round(target * (1 - (1 - progress) ** 3)));
-        lastWrite = now;
-      }
-      if (progress < 1 && !reduce.matches) job.frame = requestAnimationFrame(step);
-      else finishCount(element, job);
-    };
-    job.frame = requestAnimationFrame(step);
-  }
-
-  const cards = [...document.querySelectorAll('.service-card,.project-card,.resource-card,.gallery-item,.team-grid article,.pump-gallery figure')]
-    .filter(card => !card.matches('.pump-photo'));
-  cards.forEach(card => card.classList.add('motion-card'));
-  for (const grid of document.querySelectorAll('.service-grid,.project-grid,.resource-grid,.gallery-grid,.team-grid,.pump-gallery')) {
-    [...grid.children].forEach((card, index) => {
-      // Stagger per row rather than delaying the twentieth project by two seconds.
-      const columns = Math.max(1, getComputedStyle(grid).gridTemplateColumns.split(' ').length);
-      card.style.setProperty('--reveal-delay', `${(index % columns) * 100}ms`);
-    });
-  }
-  // Reveal meaningful groups. A card's heading/paragraph and its section never
-  // get a second overlapping entrance, and service tab panels stay immediately usable.
-  const targets = [...new Set(document.querySelectorAll('.section-heading, .intro > div, .intro > .eyebrow, .page-lead .wrap, .team-intro, .split-copy > div, .responsibility-copy, .values-grid > div, .editorial-list article, .policy-article > *, .document-list > a, .office-panel, .company-facts > div, .conversation h2, .motion-card, #project-count, [data-count-up]'))]
-    .filter(el => !el.matches('.hero') && !el.closest('.hero,.floating-shapes'));
-  function show(element, instant = false) {
-    if (element.classList.contains('is-visible')) return;
-    element.classList.add('is-visible');
-    if (!instant) {
-      element.classList.add('is-animating');
-      later(() => element.classList.remove('is-animating'), 1100);
-    }
-    revealObserver?.unobserve(element);
-    if (element.matches('#project-count,[data-count-up]')) countOnce(element);
-  }
-  if (!reduce.matches && 'IntersectionObserver' in window) {
-    root.classList.add('motion-ready');
-    targets.forEach(el => { if (!el.matches('#project-count,[data-count-up]')) el.classList.add('motion-reveal'); });
-    revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) show(entry.target); });
-    }, { rootMargin: '0px 0px -16px 0px', threshold: 0 });
-    targets.forEach(el => revealObserver.observe(el));
-  }
-  document.addEventListener('focusin', event => {
-    let node = event.target;
-    while (node && node !== document.body) {
-      if (node.classList?.contains('motion-reveal')) show(node, true);
-      node = node.parentElement;
-    }
-  });
+  const cards=[...document.querySelectorAll('.service-card,.project-card,.resource-card,.gallery-item')];
+  cards.forEach(card=>card.classList.add('motion-card'));
   // Opt-in, local-only diagnostics for the motion audit; no production RAF loop.
   if ((window.location?.search.includes('motion-audit=1') || root.getAttribute('data-motion-audit-enabled') === 'true') && 'PerformanceObserver' in window) {
     const gaps = [], longTasks = [];
@@ -244,10 +170,7 @@
       document.querySelector('.motion-intro')?.remove();
       document.querySelector('.hero')?.classList.remove('hero-motion');
       document.querySelector('main')?.classList.remove('motion-page-arrival');
-      revealObserver?.disconnect();
       animationTimers.forEach(clearTimeout); animationTimers.clear();
-      targets.forEach(el => { el.classList.add('is-visible'); el.classList.remove('is-animating'); });
-      for (const [el, job] of countJobs) finishCount(el, job);
       for (const item of shapes) item.shape.style.transform = '';
     }
     requestTick();

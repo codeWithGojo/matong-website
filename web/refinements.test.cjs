@@ -27,7 +27,7 @@ function fixture({ reduced = false, observer = true } = {}) {
   document.querySelector = () => box; document.getElementById = id => panels[Number(id.split('-')[1])];
   const window = new Node();
   const reduce = { matches: reduced, addEventListener(_, fn) { this.change = fn; } };
-  const context = { document, window, matchMedia: () => reduce,
+  const context = { document, window, performance:{now:()=>now}, matchMedia: () => reduce,
     setTimeout(fn, delay) { const id = ++serial; timers.set(id, { fn, at: now + delay }); return id; },
     clearTimeout: id => timers.delete(id),
     MutationObserver: class { constructor(fn) { this.fn = fn; mutations.push(this); } observe() {} },
@@ -73,6 +73,7 @@ check('Mouse hover pauses; touch pointer events do not leave a sticky hover paus
   assert.equal(f.status.textContent, '1 / 4'); f.box.emit('pointerleave'); f.box.emit('pointerenter', { pointerType: 'touch' });
   f.advance(8000); assert.equal(f.status.textContent, '2 / 4');
 });
+check('Hover resumes the remaining slide time rather than restarting the progress',()=>{const f=fixture();f.visibility(true);f.advance(2000);f.box.emit('pointerenter');f.advance(10000);f.box.emit('pointerleave');f.advance(5999);assert.equal(f.status.textContent,'1 / 4');f.advance(1);assert.equal(f.status.textContent,'2 / 4');});
 check('Keyboard focus suspends playback until focus leaves the component', () => {
   const f = fixture(); f.visibility(true); f.tabs[0].focus(); f.advance(16000); assert.equal(f.status.textContent, '1 / 4');
   f.box.emit('focusout', { relatedTarget: null }); f.advance(8000); assert.equal(f.status.textContent, '2 / 4');

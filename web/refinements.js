@@ -8,7 +8,7 @@
   const status = box.querySelector('.showcase-position');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0, paused = false, hovered = false, focused = false;
-  let visible = !('IntersectionObserver' in window), timer = 0, arrival = 0;
+  let visible = !('IntersectionObserver' in window), timer = 0, arrival = 0, started = 0, remaining = 8000, progressAnimation;
 
   function updatePlayback() {
     playback.disabled = reduce.matches;
@@ -17,14 +17,20 @@
     playback.setAttribute('title', playbackLabel);
     playback.setAttribute('aria-label', playbackLabel);
   }
+  function stopPlayback() {
+    if(timer){remaining=Math.max(0,remaining-(performance.now()-started));clearTimeout(timer);timer=0;}
+    progressAnimation?.pause();
+  }
   function schedule() {
-    clearTimeout(timer);
+    stopPlayback();
     if (paused || reduce.matches || hovered || focused || !visible || document.hidden ||
         document.body.classList.contains('modal-open') || document.body.classList.contains('nav-open')) return;
-    timer = setTimeout(() => select((current + 1) % tabs.length), 8000);
+    started=performance.now();progressAnimation?.play();
+    timer=setTimeout(()=>{timer=0;select((current+1)%tabs.length);},remaining);
   }
   function select(index, manual = false) {
-    clearTimeout(timer); clearTimeout(arrival);
+    stopPlayback(); clearTimeout(arrival); remaining=8000;
+    progressAnimation?.cancel();
     if (manual) { paused = true; updatePlayback(); }
     const changed = current !== index;
     current = index;
@@ -34,6 +40,9 @@
       panels[i].hidden = i !== current;
       panels[i].classList.remove('is-entering');
     });
+    const fill=tabs[current].querySelector('.service-progress > span');
+    progressAnimation=!reduce.matches&&fill?.animate?fill.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:8000,easing:'linear',fill:'forwards'}):null;
+    progressAnimation?.pause();
     // Manual choices are announced; auto-rotation never repeatedly interrupts a reader.
     status.setAttribute('aria-live', manual ? 'polite' : 'off');
     status.textContent = `${current + 1} / ${tabs.length}`;
@@ -59,7 +68,7 @@
   box.addEventListener('focusin', () => { focused = true; schedule(); });
   box.addEventListener('focusout', event => { if (!box.contains(event.relatedTarget)) { focused = false; schedule(); } });
   document.addEventListener('visibilitychange', schedule);
-  window.addEventListener('pagehide', () => { clearTimeout(timer); clearTimeout(arrival); });
+  window.addEventListener('pagehide', () => { stopPlayback(); clearTimeout(arrival); });
   window.addEventListener('pageshow', schedule);
   reduce.addEventListener('change', () => {
     clearTimeout(arrival); panels.forEach(panel => panel.classList.remove('is-entering'));

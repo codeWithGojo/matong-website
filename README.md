@@ -49,3 +49,7 @@ The website labels the ERP independently from the Staff portal and staff webmail
 Responsive media is committed to the repository. Regenerate it with `python web/prepare-media.py` when photographs change (Pillow required for this preparation step only). Vercel builds remain dependency-free Node builds.
 
 Vercel previews (or `MATONG_PREVIEW_AUDIT=1 npm run build` locally) create a preview-only 360px/390px browser fixture at `/layout-audit`. Normal production builds exclude the fixture and its data.
+
+## Shared design and motion upgrade
+
+See [frontend-upgrade.md](docs/frontend-upgrade.md) for shared tokens, homepage refinements, changed files and verification.
