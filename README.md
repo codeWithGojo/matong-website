@@ -8,10 +8,11 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 
 ## Features
 
-- Responsive company navigation, following header with a short slide-in after 50px, and website search.
+- Responsive company navigation, header that hides on downward scroll and returns on upward scroll, and website search.
 - Full-width image hero with a primary project enquiry action.
 - Controlled eight-second service tabs with pause, keyboard navigation, touch selection and reduced-motion support.
-- Modern team profiles on the homepage and Team page, using the original staff names, roles and photos.
+- Dedicated sliding Team page with original staff names, roles and photos, touch/keyboard navigation and distinct portrait/copy motion.
+- Spacious corporate footer with offices, quick links, contact details and labelled legibility settings. Compact circular contact launcher and icon-only slideshow controls.
 - Shared blue hover/focus treatment, readable typography and consistent section spacing.
 - Grouped scroll reveals, pump-photo enlargement and service-specific project enquiry links.
 - Responsive WebP sources for hero and project imagery, with lazy loading below the fold.

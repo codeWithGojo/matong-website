@@ -64,7 +64,7 @@ check('Offscreen showcase stays still, visible showcase advances at eight second
 });
 check('Manual choice pauses automatic rotation until Resume', () => {
   const f = fixture(); f.visibility(true); f.tabs[2].emit('click'); f.advance(16000);
-  assert.equal(f.status.textContent, '3 / 4'); assert.equal(f.playback.textContent, 'Resume rotation');
+  assert.equal(f.status.textContent, '3 / 4'); assert.equal(f.playback.attrs['aria-label'], 'Resume service rotation');
   assert.equal(f.status.attrs['aria-live'], 'polite'); f.playback.emit('click'); f.advance(8000);
   assert.equal(f.status.textContent, '4 / 4');
 });

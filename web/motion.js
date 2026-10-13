@@ -70,11 +70,19 @@
     shapes.push({ host, shape, speed: [.04, .065, .03, .05][i], top: 0, height: 0, visible: false });
   });
   const header = document.querySelector('.header');
-  let lastScrolled;
+  let lastScrolled, scrollAnchor = Math.max(0, window.scrollY);
   function updateHeader() {
-    const scrolled = window.scrollY > 50;
+    const y = Math.max(0, window.scrollY);
+    const scrolled = y > 50;
     if (scrolled !== lastScrolled) { header?.classList.toggle('is-scrolled', scrolled); lastScrolled = scrolled; }
+    const engaged = document.body.classList.contains('nav-open') || header?.contains(document.activeElement);
+    if (y < 100 || engaged) {
+      header?.classList.remove('is-hidden'); scrollAnchor = y;
+    } else if (Math.abs(y - scrollAnchor) > 8) {
+      header?.classList.toggle('is-hidden', y > scrollAnchor); scrollAnchor = y;
+    }
   }
+  header?.addEventListener('focusin', () => { header.classList.remove('is-hidden'); scrollAnchor = Math.max(0, window.scrollY); });
   let viewportHeight = innerHeight;
   function measureShapes() {
     viewportHeight = innerHeight;

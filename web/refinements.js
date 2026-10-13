@@ -13,8 +13,9 @@
   function updatePlayback() {
     playback.disabled = reduce.matches;
     playback.setAttribute('aria-pressed', String(paused || reduce.matches));
-    playback.textContent = reduce.matches ? 'Rotation off' : paused ? 'Resume rotation' : 'Pause rotation';
-    playback.setAttribute('aria-label', reduce.matches ? 'Automatic rotation off for reduced motion' : playback.textContent);
+    const playbackLabel = reduce.matches ? 'Automatic rotation off for reduced motion' : paused ? 'Resume service rotation' : 'Pause service rotation';
+    playback.setAttribute('title', playbackLabel);
+    playback.setAttribute('aria-label', playbackLabel);
   }
   function schedule() {
     clearTimeout(timer);

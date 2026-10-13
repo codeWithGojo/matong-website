@@ -30,9 +30,9 @@
 /* Sticky remains in flow: the following header slides in without layout movement. */
 .header{background:var(--navy);top:0}
 .header::after{background:var(--deep);box-shadow:0 8px 24px #021c2950}
-.header.is-scrolled{animation:header-follow .45s var(--motion-ease) both}
+
 .header:focus-within,.nav-open .header{animation:none}
-@keyframes header-follow{from{opacity:.35;transform:translateY(-100%)}to{opacity:1;transform:none}}
+
 
 /* Full-width real imagery, bounded copy and one clear primary action. */
 .hero{min-height:calc(100svh - var(--header-height));min-height:max(680px,calc(100svh - var(--header-height)))}
