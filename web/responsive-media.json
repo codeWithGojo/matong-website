@@ -540,5 +540,23 @@
         1500
       ]
     ]
+  },
+  "/media/volumetric-efficiency.webp": {
+    "width": 1152,
+    "height": 1536,
+    "variants": [
+      [
+        "/media/volumetric-efficiency-480.webp",
+        480
+      ],
+      [
+        "/media/volumetric-efficiency-800.webp",
+        800
+      ],
+      [
+        "/media/volumetric-efficiency.webp",
+        1152
+      ]
+    ]
   }
 }

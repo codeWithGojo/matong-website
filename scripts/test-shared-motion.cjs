@@ -4,4 +4,5 @@ let f=setup('reveal.js');const stop=f.c.initReveal(f.root);assert(f.values.has('
 f=setup('count-up.js');f.c.initCountUp(f.root);f.observers[0].fn([{target:f.node,isIntersecting:true}]);f.flush(0);f.flush(350);assert.notEqual(f.node.textContent,'20 projects');f.flush(701);assert.equal(f.node.textContent,'20 projects');assert.equal(f.frames.size,0);
 f=setup('count-up.js');f.c.initCountUp(f.root);f.observers[0].fn([{target:f.node,isIntersecting:true}]);f.flush(0);f.media.matches=true;f.media.change();assert.equal(f.node.textContent,'20 projects');assert.equal(f.frames.size,0);
 f=setup('reveal.js',{reduced:true});f.c.initReveal(f.root);assert(!f.values.has('reveal-pending'));assert.equal(f.observers.length,0);
+f=setup('count-up.js');f.c.initCountUp(f.root);f.observers[0].fn([{target:f.node,isIntersecting:true}]);f.flush(0);f.node.dataset.count='5';f.node.textContent='5 projects';f.flush(100);assert.equal(f.node.textContent,'5 projects');assert.equal(f.frames.size,0);
 console.log('PASS shared reveal once, visibility fallback, count completion and reduced-motion cancellation');
