@@ -10,7 +10,7 @@
     const nextImage = hero.querySelector('#hero-next');
     const buttons = [...hero.querySelectorAll('[data-slide]')];
     const playback = hero.querySelector('.hero-playback');
-    const sources = buttons.map(button => ({ src: button.dataset.image, alt: button.dataset.alt }));
+    const sources = buttons.map(button => ({ src: button.dataset.image, alt: button.dataset.alt, srcset: button.dataset.srcset || '' }));
     const loaded = new Map([[sources[0].src, Promise.resolve()]]);
     let current = 0, paused = false, hovered = false, focused = false;
     let visible = !('IntersectionObserver' in window), timer = 0, blendTimer = 0;
@@ -22,6 +22,8 @@
           const probe = new Image();
           probe.onload = () => resolve();
           probe.onerror = () => { loaded.delete(source); reject(new Error('Image unavailable')); };
+          probe.sizes = '100vw';
+          probe.srcset = sources.find(item => item.src === source)?.srcset || '';
           probe.src = source;
         });
         loaded.set(source, task);
@@ -45,6 +47,7 @@
     function settle() {
       clearTimeout(blendTimer);
       if (blending) {
+        image.srcset = sources[current].srcset; image.sizes = '100vw';
         image.src = sources[current].src;
         image.alt = sources[current].alt;
         nextImage.classList.remove('is-blending');
@@ -67,8 +70,10 @@
         button.classList.toggle('active', i === current);
         button.setAttribute('aria-pressed', String(i === current));
       });
+      nextImage.srcset = sources[current].srcset; nextImage.sizes = '100vw';
       nextImage.src = sources[current].src;
       if (reduce.matches || !visible || document.hidden) {
+        image.srcset = sources[current].srcset; image.sizes = '100vw';
         image.src = sources[current].src; image.alt = sources[current].alt;
         busy = false; schedule(); return;
       }

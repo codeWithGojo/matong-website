@@ -23,7 +23,7 @@ function fixture({ reduced = false, hasHero = true } = {}) {
   const root = new Node(), body = new Node(), hero = new Node(), image = new Node(), nextImage = new Node();
   const playback = new Node(), label = new Node(), icon = new Node();
   playback.selectors = { '.playback-label': label, '.playback-icon': icon };
-  const buttons = [0, 1, 2].map(i => { const b = new Node(); b.dataset = { image: `/slide-${i}.webp`, alt: `Photo ${i}` }; return b; });
+  const buttons = [0, 1, 2].map(i => { const b = new Node(); b.dataset = { image: `/slide-${i}.webp`, alt: `Photo ${i}`, srcset: `/slide-${i}-480.webp 480w, /slide-${i}.webp 1200w` }; return b; });
   image.src = '/slide-0.webp'; image.alt = 'Photo 0';
   hero.selectors = { '#hero-image': image, '#hero-next': nextImage, '.hero-playback': playback };
   hero.lists = { '[data-slide]': buttons }; hero.children = buttons;
@@ -123,5 +123,6 @@ async function test(name, run) { await run(); console.log('PASS', name); passed+
     assert(f.whatsapp.href.startsWith('https://wa.me/2348037445836?text='));
     f.dialog.close(); assert.equal(f.launcher.attrs['aria-expanded'], 'false');
   });
-  console.log(`${passed} experience regressions passed.`);
+  await test('Responsive hero sources follow manual selection rather than retaining the first slide', async () => { const f=fixture({reduced:true}); f.buttons[1].emit('click'); await f.loaded(1); assert.equal(f.image.srcset, f.buttons[1].dataset.srcset); assert.equal(f.image.sizes, '100vw'); });
+console.log(`${passed} experience regressions passed.`);
 })().catch(error => { console.error(error); process.exitCode = 1; });

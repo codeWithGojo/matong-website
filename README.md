@@ -8,7 +8,13 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 
 ## Features
 
-- Responsive company navigation and website search.
+- Responsive company navigation, following header with a short slide-in after 50px, and website search.
+- Full-width image hero with a primary project enquiry action.
+- Controlled eight-second service tabs with pause, keyboard navigation, touch selection and reduced-motion support.
+- Modern team profiles on the homepage and Team page, using the original staff names, roles and photos.
+- Shared blue hover/focus treatment, readable typography and consistent section spacing.
+- Grouped scroll reveals, pump-photo enlargement and service-specific project enquiry links.
+- Responsive WebP sources for hero and project imagery, with lazy loading below the fold.
 - Slow hero image slideshow with pause/manual selection, visibility-aware playback and reduced-motion support.
 - Service capability summaries and swipeable mobile cards with keyboard-accessible controls.
 - Floating enquiry panel with service-specific WhatsApp and quote links, plus tap-to-call contact.
@@ -23,6 +29,8 @@ Run `npm run build` with Node.js 20 or later. No dependencies are required. Depl
 
 ## Validation
 
+`node web/refinements.test.cjs` checks service tab selection, autoplay, keyboard, visibility and reduced motion.
+
 `node web/experience.test.cjs` checks slideshow playback, load failures, carousel controls and contact-panel routing.
 
 `npm run check` checks generated pages, local routes/assets, fragment links, duplicate IDs, project coverage and the exclusion of PHP source from the deployment.
@@ -34,3 +42,9 @@ Project names, clients, facilities, office details, leadership and policy text a
 ## Separate Staff portal
 
 The website labels the ERP independently from the Staff portal and staff webmail. Set `MATONG_STAFF_PORTAL_URL` at build time once the separate HTTPS portal destination is confirmed. Until then, the portal FAQ directs staff to company administration; no ERP address is labelled as the Staff portal.
+
+## Media and preview QA
+
+Responsive media is committed to the repository. Regenerate it with `python web/prepare-media.py` when photographs change (Pillow required for this preparation step only). Vercel builds remain dependency-free Node builds.
+
+Vercel previews (or `MATONG_PREVIEW_AUDIT=1 npm run build` locally) create a preview-only 360px/390px browser fixture at `/layout-audit`. Normal production builds exclude the fixture and its data.

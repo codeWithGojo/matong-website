@@ -33,10 +33,8 @@
     later(() => {
       root.classList.remove('intro-running');
       overlay.classList.add('is-leaving');
-      document.querySelector('main')?.classList.add('motion-page-arrival');
       startHero();
       later(() => overlay.remove(), 370);
-      later(() => document.querySelector('main')?.classList.remove('motion-page-arrival'), 650);
     }, 520);
   } else {
     root.classList.remove('intro-running');
@@ -158,7 +156,8 @@
     job.frame = requestAnimationFrame(step);
   }
 
-  const cards = document.querySelectorAll('.service-card,.project-card,.resource-card,.gallery-item,.team-grid article,.pump-gallery figure');
+  const cards = [...document.querySelectorAll('.service-card,.project-card,.resource-card,.gallery-item,.team-grid article,.pump-gallery figure')]
+    .filter(card => !card.matches('.pump-photo'));
   cards.forEach(card => card.classList.add('motion-card'));
   for (const grid of document.querySelectorAll('.service-grid,.project-grid,.resource-grid,.gallery-grid,.team-grid,.pump-gallery')) {
     [...grid.children].forEach((card, index) => {
@@ -167,7 +166,9 @@
       card.style.setProperty('--reveal-delay', `${(index % columns) * 100}ms`);
     });
   }
-  const targets = [...new Set(document.querySelectorAll('main > section, main h1, main h2, main h3, main p, .conversation h2, footer h3, footer p, .motion-card, #project-count, [data-count-up]'))]
+  // Reveal meaningful groups. A card's heading/paragraph and its section never
+  // get a second overlapping entrance, and service tab panels stay immediately usable.
+  const targets = [...new Set(document.querySelectorAll('.section-heading, .intro > div, .intro > .eyebrow, .page-lead .wrap, .team-intro, .split-copy > div, .responsibility-copy, .values-grid > div, .editorial-list article, .policy-article > *, .document-list > a, .office-panel, .company-facts > div, .conversation h2, .motion-card, #project-count, [data-count-up]'))]
     .filter(el => !el.matches('.hero') && !el.closest('.hero,.floating-shapes'));
   function show(element, instant = false) {
     if (element.classList.contains('is-visible')) return;
@@ -181,7 +182,7 @@
   }
   if (!reduce.matches && 'IntersectionObserver' in window) {
     root.classList.add('motion-ready');
-    targets.forEach(el => el.classList.add('motion-reveal'));
+    targets.forEach(el => { if (!el.matches('#project-count,[data-count-up]')) el.classList.add('motion-reveal'); });
     revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => { if (entry.isIntersecting) show(entry.target); });
     }, { rootMargin: '0px 0px -16px 0px', threshold: 0 });

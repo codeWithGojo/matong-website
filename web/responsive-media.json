@@ -1,0 +1,544 @@
+{
+  "/media/01.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/01-480.webp",
+        480
+      ],
+      [
+        "/media/01-800.webp",
+        800
+      ],
+      [
+        "/media/01-1200.webp",
+        1200
+      ],
+      [
+        "/media/01.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/02.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/02-480.webp",
+        480
+      ],
+      [
+        "/media/02-800.webp",
+        800
+      ],
+      [
+        "/media/02-1200.webp",
+        1200
+      ],
+      [
+        "/media/02.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/03.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/03-480.webp",
+        480
+      ],
+      [
+        "/media/03-800.webp",
+        800
+      ],
+      [
+        "/media/03-1200.webp",
+        1200
+      ],
+      [
+        "/media/03.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/04.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/04-480.webp",
+        480
+      ],
+      [
+        "/media/04-800.webp",
+        800
+      ],
+      [
+        "/media/04-1200.webp",
+        1200
+      ],
+      [
+        "/media/04.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/05.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/05-480.webp",
+        480
+      ],
+      [
+        "/media/05-800.webp",
+        800
+      ],
+      [
+        "/media/05-1200.webp",
+        1200
+      ],
+      [
+        "/media/05.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/06.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/06-480.webp",
+        480
+      ],
+      [
+        "/media/06-800.webp",
+        800
+      ],
+      [
+        "/media/06-1200.webp",
+        1200
+      ],
+      [
+        "/media/06.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/07.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/07-480.webp",
+        480
+      ],
+      [
+        "/media/07-800.webp",
+        800
+      ],
+      [
+        "/media/07-1200.webp",
+        1200
+      ],
+      [
+        "/media/07.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/08.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/08-480.webp",
+        480
+      ],
+      [
+        "/media/08-800.webp",
+        800
+      ],
+      [
+        "/media/08-1200.webp",
+        1200
+      ],
+      [
+        "/media/08.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/09.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/09-480.webp",
+        480
+      ],
+      [
+        "/media/09-800.webp",
+        800
+      ],
+      [
+        "/media/09-1200.webp",
+        1200
+      ],
+      [
+        "/media/09.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/10.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/10-480.webp",
+        480
+      ],
+      [
+        "/media/10-800.webp",
+        800
+      ],
+      [
+        "/media/10-1200.webp",
+        1200
+      ],
+      [
+        "/media/10.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/11.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/11-480.webp",
+        480
+      ],
+      [
+        "/media/11-800.webp",
+        800
+      ],
+      [
+        "/media/11-1200.webp",
+        1200
+      ],
+      [
+        "/media/11.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/12.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/12-480.webp",
+        480
+      ],
+      [
+        "/media/12-800.webp",
+        800
+      ],
+      [
+        "/media/12-1200.webp",
+        1200
+      ],
+      [
+        "/media/12.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/13.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/13-480.webp",
+        480
+      ],
+      [
+        "/media/13-800.webp",
+        800
+      ],
+      [
+        "/media/13-1200.webp",
+        1200
+      ],
+      [
+        "/media/13.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/14.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/14-480.webp",
+        480
+      ],
+      [
+        "/media/14-800.webp",
+        800
+      ],
+      [
+        "/media/14-1200.webp",
+        1200
+      ],
+      [
+        "/media/14.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/15.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/15-480.webp",
+        480
+      ],
+      [
+        "/media/15-800.webp",
+        800
+      ],
+      [
+        "/media/15-1200.webp",
+        1200
+      ],
+      [
+        "/media/15.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/16.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/16-480.webp",
+        480
+      ],
+      [
+        "/media/16-800.webp",
+        800
+      ],
+      [
+        "/media/16-1200.webp",
+        1200
+      ],
+      [
+        "/media/16.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/17.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/17-480.webp",
+        480
+      ],
+      [
+        "/media/17-800.webp",
+        800
+      ],
+      [
+        "/media/17-1200.webp",
+        1200
+      ],
+      [
+        "/media/17.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/18.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/18-480.webp",
+        480
+      ],
+      [
+        "/media/18-800.webp",
+        800
+      ],
+      [
+        "/media/18-1200.webp",
+        1200
+      ],
+      [
+        "/media/18.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/19.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/19-480.webp",
+        480
+      ],
+      [
+        "/media/19-800.webp",
+        800
+      ],
+      [
+        "/media/19-1200.webp",
+        1200
+      ],
+      [
+        "/media/19.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/20.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/20-480.webp",
+        480
+      ],
+      [
+        "/media/20-800.webp",
+        800
+      ],
+      [
+        "/media/20-1200.webp",
+        1200
+      ],
+      [
+        "/media/20.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/pump-1.webp": {
+    "width": 1156,
+    "height": 1536,
+    "variants": [
+      [
+        "/media/pump-1-480.webp",
+        480
+      ],
+      [
+        "/media/pump-1-800.webp",
+        800
+      ],
+      [
+        "/media/pump-1.webp",
+        1156
+      ]
+    ]
+  },
+  "/media/pump-2.webp": {
+    "width": 1156,
+    "height": 1536,
+    "variants": [
+      [
+        "/media/pump-2-480.webp",
+        480
+      ],
+      [
+        "/media/pump-2-800.webp",
+        800
+      ],
+      [
+        "/media/pump-2.webp",
+        1156
+      ]
+    ]
+  },
+  "/media/service3.webp": {
+    "width": 1500,
+    "height": 1000,
+    "variants": [
+      [
+        "/media/service3-480.webp",
+        480
+      ],
+      [
+        "/media/service3-800.webp",
+        800
+      ],
+      [
+        "/media/service3-1200.webp",
+        1200
+      ],
+      [
+        "/media/service3.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/slide01.webp": {
+    "width": 1500,
+    "height": 781,
+    "variants": [
+      [
+        "/media/slide01-480.webp",
+        480
+      ],
+      [
+        "/media/slide01-800.webp",
+        800
+      ],
+      [
+        "/media/slide01-1200.webp",
+        1200
+      ],
+      [
+        "/media/slide01.webp",
+        1500
+      ]
+    ]
+  },
+  "/media/slide03.webp": {
+    "width": 1500,
+    "height": 781,
+    "variants": [
+      [
+        "/media/slide03-480.webp",
+        480
+      ],
+      [
+        "/media/slide03-800.webp",
+        800
+      ],
+      [
+        "/media/slide03-1200.webp",
+        1200
+      ],
+      [
+        "/media/slide03.webp",
+        1500
+      ]
+    ]
+  }
+}
