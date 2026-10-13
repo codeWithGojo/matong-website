@@ -130,6 +130,9 @@
 .project-detail>div>p{font-size:1rem}
 .gallery-item>img,.split-copy>img{border-radius:var(--radius)}
 .gallery-item>span{font-size:.875rem}
+.gallery-item.interactive-card:not(.pump-photo){padding:12px}
+.pump-photo::after{content:'';position:absolute;inset:1px;border:2px solid var(--accent-ink);border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s var(--motion-ease)}
+.pump-photo:focus-visible::after{opacity:1}
 .gallery-dialog .gallery-meta p{font-size:.875rem}
 .company-facts>div>span{font-size:.94rem}
 .client-label{font-size:.875rem}
@@ -139,6 +142,7 @@
  .interactive-card:hover::before,.document-list>a:hover::before,.mega-links>a:hover::before,.principles>a:hover::before{opacity:1}
  .interactive-card:hover{z-index:1}
  .team-card:hover .team-photo img,.pump-photo:hover img{transform:scale(1.06)}
+ .pump-photo:hover::after{opacity:1}
 }
 @media(min-width:741px){
  :root{--gutter:32px;--header-height:88px}

@@ -111,7 +111,7 @@
     const previous = controls.querySelector('.service-prev');
     const next = controls.querySelector('.service-next');
     const position = controls.querySelector('.service-position');
-    let active = 0;
+    let active = 0, requested = null;
     function update(index) {
       active = index;
       previous.disabled = active === 0;
@@ -120,15 +120,23 @@
     }
     function move(direction) {
       const index = Math.min(cards.length - 1, Math.max(0, active + direction));
+      requested = index;
       grid.scrollTo({ left: cards[index].offsetLeft - cards[0].offsetLeft,
         behavior: reduce.matches ? 'auto' : 'smooth' });
       update(index);
     }
     previous.addEventListener('click', () => move(-1));
     next.addEventListener('click', () => move(1));
+    // User swiping takes over; an in-progress button move otherwise owns its counter.
+    grid.addEventListener('pointerdown', () => { requested = null; });
+    grid.addEventListener('wheel', () => { requested = null; }, { passive: true });
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => {
         const candidates = entries.filter(entry => entry.isIntersecting && entry.intersectionRatio >= .65);
+        if (requested !== null) {
+          if (candidates.some(entry => entry.target === cards[requested])) { update(requested); requested = null; }
+          return;
+        }
         if (candidates.length) update(cards.indexOf(candidates[0].target));
       }, { root: grid, threshold: .65 });
       cards.forEach(card => observer.observe(card));

@@ -123,6 +123,17 @@ async function test(name, run) { await run(); console.log('PASS', name); passed+
     assert(f.whatsapp.href.startsWith('https://wa.me/2348037445836?text='));
     f.dialog.close(); assert.equal(f.launcher.attrs['aria-expanded'], 'false');
   });
+  await test('Carousel counter ignores stale visibility while a button move is settling', async () => {
+    const f = fixture(); f.next.emit('click');
+    const observer = f.observers[1];
+    observer.fn([{target:f.grid.children[0],isIntersecting:true,intersectionRatio:1}]);
+    assert.equal(f.position.textContent,'2 / 4');
+    f.next.emit('click');
+    observer.fn([{target:f.grid.children[1],isIntersecting:true,intersectionRatio:1}]);
+    assert.equal(f.position.textContent,'3 / 4');
+    observer.fn([{target:f.grid.children[2],isIntersecting:true,intersectionRatio:1}]);
+    assert.equal(f.position.textContent,'3 / 4');
+  });
   await test('Responsive hero sources follow manual selection rather than retaining the first slide', async () => { const f=fixture({reduced:true}); f.buttons[1].emit('click'); await f.loaded(1); assert.equal(f.image.srcset, f.buttons[1].dataset.srcset); assert.equal(f.image.sizes, '100vw'); });
 console.log(`${passed} experience regressions passed.`);
 })().catch(error => { console.error(error); process.exitCode = 1; });
