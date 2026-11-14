@@ -44,6 +44,12 @@ Project names, clients, facilities, office details, leadership and policy text a
 
 The website labels the ERP independently from the Staff portal and staff webmail. Set `MATONG_STAFF_PORTAL_URL` at build time once the separate HTTPS portal destination is confirmed. Until then, the portal FAQ directs staff to company administration; no ERP address is labelled as the Staff portal.
 
+## Optional field-operations photographs and videos
+
+The separate media pack goes in `web/field-media/` and contains `manifest.json`, eight responsive WebP photographs, two MP4 videos and their poster images. On the next `npm run build`, these assets are copied to the static website and appear in the existing `/gallery` page under **Field operations**. The gallery section is omitted when the pack has not been added, so existing deployments remain intact. Video playback is user-initiated with native controls; images use the existing accessible photo viewer.
+
+Only publish project photographs and footage after Matong approves the images, identifiable staff, and any facility/security details visible on-site.
+
 ## Media and preview QA
 
 Responsive media is committed to the repository. Regenerate it with `python web/prepare-media.py` when photographs change (Pillow required for this preparation step only). Vercel builds remain dependency-free Node builds.
